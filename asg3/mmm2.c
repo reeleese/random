@@ -8,7 +8,13 @@ static int total1;
 static int total2;
 
 static void mmm2(int *array, int size) {
-  // TBD
+  int i;
+  total1 = 0;
+  total2 = 0;
+  for (i=0; i<size; ++i) {
+    total1 += array[i];
+    total2 += array[i] * array[i];
+  }
 }
 
 int main(int argc, char *argv[]) {

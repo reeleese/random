@@ -11,7 +11,16 @@ typedef struct MMM {
 
 static mmm_t *mmm3(int *array, int size) {
   static mmm_t mmm;
-  // TBD
+  mmm.total1 = 0;
+  mmm.total2 = 0;
+
+  int i;
+  for (i=0; i<size; ++i) {
+    mmm.total1 += array[i];
+    mmm.total2 += array[i] * array[i];
+  }
+
+  return &mmm;
 }
 
 int main(int argc, char *argv[]) {

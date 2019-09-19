@@ -11,7 +11,14 @@ typedef struct MMM {
 
 static mmm_t *mmm5(int *array, int size) {
   mmm_t *mmm = (mmm_t *) malloc(sizeof(mmm_t));
-  // TBD
+  mmm->total1 = 0;
+  mmm->total2 = 0;
+
+  int i;
+  for (i=0; i<size; ++i) {
+    mmm->total1 += array[i];
+    mmm->total2 += array[i] * array[i];
+  }
   return mmm;
 }
 
@@ -21,6 +28,7 @@ int main(int argc, char *argv[]) {
   for (i = 0; i < SZ; i++) data[i] = i % 10 + i / 10;
   mmm_t *mmm = mmm5(data, SZ);
   printf("Sum1=%d Sum2=%d\n", mmm->total1, mmm->total2);
+  free(mmm);
   // Check md5sum: 90ce0f7083a8f701a92d3592fdb78b88
   return 0;
 }

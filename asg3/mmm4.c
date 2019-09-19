@@ -10,7 +10,14 @@ typedef struct MMM {
 } mmm_t;
 
 static void mmm4(int *array, int size, mmm_t *mmm) {
-  // TBD
+  mmm->total1 = 0;
+  mmm->total2 = 0;
+  
+  int i;
+  for (i=0; i<size; ++i) {
+    mmm->total1 += array[i];
+    mmm->total2 += array[i] * array[i];
+  }
 }
 
 int main(int argc, char *argv[]) {
