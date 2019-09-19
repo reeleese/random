@@ -26,14 +26,9 @@ static int sum2(int *array, int size) {
 int main(int argc, char *argv[]) {
   int data[SZ];
   int i;
-
-  for (i=0; i<SZ; ++i) {
-    data[i] = i % 10 + i / 10;
-  }
-
+  for (i = 0; i < SZ; i++) data[i] = i % 10 + i / 10;
   int total1 = sum1(data, SZ);
   int total2 = sum2(data, SZ);
-
   printf("Sum1=%d Sum2=%d\n", total1, total2);
   // Check md5sum: 3fd78a160fb6e984506602b1e36ffb82
   return 0;

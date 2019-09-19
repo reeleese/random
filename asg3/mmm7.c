@@ -7,8 +7,11 @@
 #define mmm7(ar, sz, t1, t2) \
   t1 = 0; \
   t2 = 0; \
-  // TBD \
+  for (i=0; i<sz; ++i) { \
+    t1 += ar[i]; \
+    t2 += ar[i] * ar[i]; \
   }
+
   
 int main(int argc, char *argv[]) {
   int data[SZ];
